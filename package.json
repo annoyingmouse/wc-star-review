@@ -1,0 +1,33 @@
+{
+  "name": "@annoyingmouse/wc-star-review",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"No test specified\"",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annoyingmouse/wc-star-review.git"
+  },
+  "keywords": [
+    "slider",
+    "range",
+    "web-component"
+  ],
+  "author": "Dominic Myers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/annoyingmouse/wc-star-review/issues"
+  },
+  "homepage": "https://github.com/annoyingmouse/wc-star-review#readme",
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
+  "devDependencies": {
+    "rollup": "^2.36.2",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
