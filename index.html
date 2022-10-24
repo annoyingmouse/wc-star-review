@@ -46,6 +46,20 @@
                 reviews="4"></wc-star-review>
 <wc-star-review rating="5"
                 reviews="5"></wc-star-review>
+<h3>Incremental</h3>
+<p>Increments <code>rating</code> attribute between 0 and 5 in 0.1 steps, currently <span id="rating"></span>.</p>
+<wc-star-review id="increments"
+                rating="0"></wc-star-review>
+<h3>Different Number of Stars</h3>
+<p>Changes <code>total</code> and <code>rating</code> attributes every five seconds. Currently <code>total</code>is <span id="star-number-total"></span> and <code>rating</code> is <span id="star-number-rating"></span>.</p>
+<wc-star-review id="starNumber"
+                rating="0"></wc-star-review>
+<h3>Different Colours</h3>
+<p>Changes <code>reviews</code>, <code>colour</code> and <code>background</code> attributes every five seconds. Currently <code>reviews</code> is <span id="reviews"></span>, <code>colour</code> is <span id="colour"></span> and <code>background</code> is <span id="background"></span>.</p>
+<wc-star-review id="starColour"
+                rating="2.5"
+                reviews="10"></wc-star-review>
+
 <script src="main.js"></script>
 <script type="module" src="wc-star-review.js"></script>
 </body>

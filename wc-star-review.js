@@ -3,7 +3,9 @@ class StarReview extends HTMLElement {
     return [
       'rating',
       'reviews',
-      'total'
+      'total',
+      'color',
+      'background'
     ]
   }
   constructor() {
