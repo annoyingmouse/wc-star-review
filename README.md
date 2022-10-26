@@ -1,0 +1,41 @@
+<h1>&lt;wc-star-review&gt;</h1>
+<p>This web component creates a configurable way of displaying a rating.</p>
+<p style="margin-bottom: 0;">
+  <a href="https://www.webcomponents.org/element/@annoyingmouse/wc-star-review"
+      rel="nofollow">
+    <img src="https://camo.githubusercontent.com/fa095f7c7b24972f3525b39a6f31c15626f3a4cc019314b4f19ad88ccfd47ddb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776562636f6d706f6e656e74732e6f72672d7075626c69736865642d626c75652e737667"
+        alt="Published on webcomponents.org"
+        data-canonical-src="https://img.shields.io/badge/webcomponents.org-published-blue.svg"
+        style="max-width: 100%;margin-bottom: 0;">
+  </a>
+</p>
+<p>Demo here: <a href="https://wc-star-review.annoyingmouse.repl.co">https://wc-star-review.annoyingmouse.repl.co</a></p>
+<h2>Installation</h2>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://unpkg.com/@annoyingmouse/wc-star-review/wc-star-review.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
+<p>Alternatively:</p>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://cdn.skypack.dev/@annoyingmouse/wc-star-review/wc-star-review.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
+<p>You can use it minified by adding using this instead:</p>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"[WHATEVER CDN]/@annoyingmouse/wc-star-review/dist/wc-star-review.min.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
+<p>Please remember to change <code>[WHATEVER CDN]</code> to your favourite <abbr title="Content Delivery Network">CDN</abbr></p>
+<h2>Usage</h2>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#274796; '> rating</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"1"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;reviews</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"1"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#274796; '> rating</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"2"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;reviews</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"2"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#274796; '> rating</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"3"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;reviews</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"3"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#274796; '> rating</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"4"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;reviews</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"4"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#274796; '> rating</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"5"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;reviews</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"5"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>wc-star-review</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"wc-star-review.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+</pre>
+<h2>Configuration</h2>
+<p>The rating is provided using the <code>rating</code> attribute, it defaults to <code>0</code>.</p>
+<p>The number of stars visible is controlled by the <code>total</code> attribute, it defaults to <code>5</code> (see the <a href="#caution"><strong>Caution</strong></a> below).</p>
+<p>The number of reviews, if known, can be shown in brackets by providing a <code>reviews</code> attribute. You don't need to display this, but if you do the number will be shown in the title of the component.</p>
+<p>The colour of the stars can be changed from the default of <code>#FFC107</code> by adding a <code>colour</code> attribute with a suitable CSS value.</p>
+<p>The background behind the stars can be changed from the default of <code>#CCCCCC</code> by adding a <code>background</code> attribute with a suitable CSS value.</p>
+<h3 id="caution">Caution</h3>
+<p>Increasing the <code>total</code> to numbers above 5 is not advised, besides, 5 stars are commonly <a href="https://uxplanet.org/how-to-design-user-rating-and-reviews-1b26c0208d3a">used in eCommerce</a></p>
