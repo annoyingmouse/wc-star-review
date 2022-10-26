@@ -13,6 +13,7 @@ class StarReview extends HTMLElement {
     this.shadow = this.attachShadow({
       mode: 'closed'
     })
+    this.render()
   }
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
@@ -72,7 +73,7 @@ class StarReview extends HTMLElement {
     return /^-?[0-9]+(?:\.[0-9]+)?$/.test(num + '')
   }
   get rating() {
-    return Number(this.getAttribute('rating'))
+    return this.hasAttribute('rating') ? Number(this.getAttribute('rating')) : 0
   }
   get displayRating() {
     return Number.isInteger(this.rating) ? this.rating : this.rating.toFixed(2)
