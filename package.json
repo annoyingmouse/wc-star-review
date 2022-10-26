@@ -12,8 +12,9 @@
     "url": "git+https://github.com/annoyingmouse/wc-star-review.git"
   },
   "keywords": [
-    "slider",
-    "range",
+    "star",
+    "rating",
+    "review",
     "web-component"
   ],
   "author": "Dominic Myers",
