@@ -49,7 +49,7 @@ Please remember to change `[WHATEVER CDN]` to your favourite CDN
 
 The rating is provided using the `rating` attribute, it defaults to `0`.
 
-The number of stars visible is controlled by the `total` attribute, it defaults to `5` (see the [**Caution**](#caution) below).
+The number of stars visible is controlled by the `total` attribute, it defaults to `5` (see the **Caution** below).
 
 The number of reviews, if known, can be shown in brackets by providing a `reviews` attribute. You don't need to display this, but if you do the number will be shown in the title of the component.
 
