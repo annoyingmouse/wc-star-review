@@ -1,5 +1,4 @@
-<wc-star-review>
-================
+# <wc-star-review>
 
 This web component creates a configurable way of displaying a rating.
 
@@ -7,39 +6,46 @@ This web component creates a configurable way of displaying a rating.
 
 Demo here: [https://wc-star-review.annoyingmouse.repl.co](https://wc-star-review.annoyingmouse.repl.co)
 
-Installation
-------------
-
-<script type\="module" src\="https://unpkg.com/@annoyingmouse/wc-star-review/wc-star-review.js"\></script\>
+## Installation
+```
+<script type="module" 
+        src="https://unpkg.com/@annoyingmouse/wc-star-review/wc-star-review.js"></script>
+```
 
 Alternatively:
 
-<script type\="module" src\="https://cdn.skypack.dev/@annoyingmouse/wc-star-review/wc-star-review.js"\></script\>
+```
+<script type="module"
+        src="https://cdn.skypack.dev/@annoyingmouse/wc-star-review/wc-star-review.js"></script>
+```
 
 You can use it minified by adding using this instead:
 
-<script type\="module" src\="\[WHATEVER CDN\]/@annoyingmouse/wc-star-review/dist/wc-star-review.min.js"\></script\>
+```
+<script type="module"
+        src="[WHATEVER CDN]/@annoyingmouse/wc-star-review/dist/wc-star-review.min.js"></script>
+```
 
 Please remember to change `[WHATEVER CDN]` to your favourite CDN
 
-Usage
------
+## Usage
 
-<wc-star-review rating\="1"
-                reviews\="1"\></wc-star-review\>
-<wc-star-review rating\="2"
-                reviews\="2"\></wc-star-review\>
-<wc-star-review rating\="3"
-                reviews\="3"\></wc-star-review\>
-<wc-star-review rating\="4"
-                reviews\="4"\></wc-star-review\>
-<wc-star-review rating\="5"
-                reviews\="5"\></wc-star-review\>
-<script type\="module"
-        src\="wc-star-review.js"\></script\>
+```
+<wc-star-review rating="1"
+                reviews="1"></wc-star-review>
+<wc-star-review rating="2"
+                reviews="2"></wc-star-review>
+<wc-star-review rating="3"
+                reviews="3"></wc-star-review>
+<wc-star-review rating="4"
+                reviews="4"></wc-star-review>
+<wc-star-review rating="5"
+                reviews="5"></wc-star-review>
+<script type="module"
+        src="wc-star-review.js"></script>
+```
 
-Configuration
--------------
+## Configuration
 
 The rating is provided using the `rating` attribute, it defaults to `0`.
 
@@ -51,6 +57,6 @@ The colour of the stars can be changed from the default of `#FFC107` by adding a
 
 The background behind the stars can be changed from the default of `#CCCCCC` by adding a `background` attribute with a suitable CSS value.
 
-### Caution
+## Caution
 
 Increasing the `total` to numbers above 5 is not advised, besides, 5 stars are commonly [used in eCommerce](https://uxplanet.org/how-to-design-user-rating-and-reviews-1b26c0208d3a)
