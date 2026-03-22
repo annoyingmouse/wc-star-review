@@ -17,6 +17,7 @@
   </style>
 </head>
 <body>
+<main>
 <h1>&lt;wc-star-review&gt;</h1>
 <p>This web component creates a configurable way of displaying a rating.</p>
 <p style="margin-bottom: 0;">
@@ -53,9 +54,20 @@
 <h2>Configuration</h2>
 <p>The rating is provided using the <code>rating</code> attribute, it defaults to <code>0</code>.</p>
 <p>The number of stars visible is controlled by the <code>total</code> attribute, it defaults to <code>5</code> (see the <a href="#caution"><strong>Caution</strong></a> below).</p>
-<p>The number of reviews, if known, can be shown in brackets by providing a <code>reviews</code> attribute. You don't need to display this, but if you do the number will be shown in the title of the component.</p>
-<p>The colour of the stars can be changed from the default of <code>#FFC107</code> by adding a <code>colour</code> attribute with a suitable CSS value.</p>
-<p>The background behind the stars can be changed from the default of <code>#CCCCCC</code> by adding a <code>background</code> attribute with a suitable CSS value.</p>
+<p>The number of reviews, if known, can be shown in brackets by providing a <code>reviews</code> attribute. The count is also included in the component's accessible label.</p>
+<p>The colour of the stars can be changed from the default of <code>#FFC107</code> by adding a <code>colour</code> attribute (or <code>color</code> for the American spelling) with a suitable CSS color value. If the value is not a valid CSS color it is ignored and the default is used.</p>
+<p>The background behind the stars can be changed from the default of <code>#CCCCCC</code> by adding a <code>background</code> attribute with a suitable CSS color value. If the value is not a valid CSS color it is ignored and the default is used.</p>
+<h2>Accessibility</h2>
+<p>The component automatically sets <code>role="img"</code>, <code>tabindex="0"</code>, and an <code>aria-label</code> on the host element. The label is generated from the current rating, total, and review count — for example: <code>"100 reviews. Rated 4.50 out of 5 stars."</code></p>
+<p>All three can be overridden by setting them directly on the element:</p>
+<pre><code>&lt;!-- suppress keyboard focus --&gt;
+&lt;wc-star-review rating="4" tabindex="-1"&gt;&lt;/wc-star-review&gt;
+
+&lt;!-- custom accessible name --&gt;
+&lt;wc-star-review rating="4" aria-label="Rated 4 out of 5 by 20 customers"&gt;&lt;/wc-star-review&gt;
+
+&lt;!-- decorative — remove from accessibility tree entirely --&gt;
+&lt;wc-star-review rating="4" role="presentation" tabindex="-1"&gt;&lt;/wc-star-review&gt;</code></pre>
 <h2>Examples</h2>
 <h3>Basic Example (my original colours)</h3>
 <wc-star-review></wc-star-review>
@@ -70,15 +82,15 @@
 <wc-star-review rating="5"
                 reviews="5"></wc-star-review>
 <h3>Incremental</h3>
-<p>Increments <code>rating</code> attribute between 0 and 5 in 0.1 steps, currently <span id="rating"></span>.</p>
+<p>Increments <code>rating</code> attribute between 0 and 5 in 0.1 steps, currently <span id="rating" aria-live="off"></span>.</p>
 <wc-star-review id="increments"
                 rating="0"></wc-star-review>
 <h3>Different Number of Stars</h3>
-<p>Changes <code>total</code> and <code>rating</code> attributes every five seconds. Currently <code>total</code>is <span id="star-number-total"></span> and <code>rating</code> is <span id="star-number-rating"></span>.</p>
+<p>Changes <code>total</code> and <code>rating</code> attributes every five seconds. Currently <code>total</code>is <span id="star-number-total" aria-live="polite"></span> and <code>rating</code> is <span id="star-number-rating" aria-live="polite"></span>.</p>
 <wc-star-review id="starNumber"
                 rating="0"></wc-star-review>
 <h3>Different Colours</h3>
-<p>Changes <code>reviews</code>, <code>colour</code> and <code>background</code> attributes every five seconds. Currently <code>reviews</code> is <span id="reviews"></span>, <code>colour</code> is <span id="colour"></span> and <code>background</code> is <span id="background"></span>.</p>
+<p>Changes <code>reviews</code>, <code>colour</code> and <code>background</code> attributes every five seconds. Currently <code>reviews</code> is <span id="reviews" aria-live="polite"></span>, <code>colour</code> is <span id="colour" aria-live="polite"></span> and <code>background</code> is <span id="background" aria-live="polite"></span>.</p>
 <wc-star-review id="starColour"
                 rating="2.5"
                 reviews="10"></wc-star-review>
@@ -87,5 +99,6 @@
 <script src="main.js"></script>
 <script type="module"
         src="wc-star-review.js"></script>
+</main>
 </body>
 </html>

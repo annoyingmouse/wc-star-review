@@ -4,6 +4,7 @@ class StarReview extends HTMLElement {
       'rating',
       'reviews',
       'total',
+      'colour',
       'color',
       'background'
     ]
@@ -11,8 +12,12 @@ class StarReview extends HTMLElement {
   constructor() {
     super()
     this.shadow = this.attachShadow({
-      mode: 'closed'
+      mode: 'open'
     })
+  }
+  connectedCallback() {
+    if (!this.hasAttribute('role')) this.setAttribute('role', 'img')
+    if (!this.hasAttribute('tabindex')) this.setAttribute('tabindex', '0')
     this.render()
   }
   attributeChangedCallback(name, oldValue, newValue) {
@@ -21,7 +26,13 @@ class StarReview extends HTMLElement {
     }
   }
   render() {
+    if (!this.isConnected) return
     this.shadow.innerHTML = `${this.style}${this.html}`
+    const currentLabel = this.getAttribute('aria-label')
+    if (!currentLabel || currentLabel === this._generatedLabel) {
+      this._generatedLabel = this.label
+      this.setAttribute('aria-label', this._generatedLabel)
+    }
   }
   get style() {
     return `
@@ -30,6 +41,10 @@ class StarReview extends HTMLElement {
           --percent: calc(${this.rating} / ${this.total} * 100%);
           --grey: ${this.background};
           --yellow: ${this.colour};
+        }
+        :host(:focus-visible) {
+          outline: 2px solid ButtonText;
+          outline-offset: 3px;
         }
         .holder {
           display: flex;
@@ -50,27 +65,30 @@ class StarReview extends HTMLElement {
           content: "${[...new Array(this.total)].map(() => '\u{2605}').join('')}";
           background: linear-gradient(90deg, var(--yellow)  var(--percent), var(--grey) var(--percent));
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
+          color: transparent;
         }
-      </style>    
+      </style>
     `
   }
   get html() {
     return `
       <div class="holder"
-           title="${this.title}">
-        <div class="stars"
-             role="img"
-             aria-label="Rating of this product out of ${this.total}."></div>
-       <div class="rating">${this.displayRating}</div>
-       ${this.hasReviews
+           aria-hidden="true">
+        <div class="stars"></div>
+        <div class="rating">${this.displayRating}</div>
+        ${this.hasReviews
       ? `<div class="total">(${this.reviews})</div>`
       : ''}
-     </div>
-   `
+      </div>
+    `
   }
   isNumeric(num) {
     return /^-?[0-9]+(?:\.[0-9]+)?$/.test(num + '')
+  }
+  isValidColor(value) {
+    return value && CSS.supports('color', value)
   }
   get rating() {
     return this.hasAttribute('rating') ? Number(this.getAttribute('rating')) : 0
@@ -88,22 +106,26 @@ class StarReview extends HTMLElement {
     return this.hasAttribute('total') ? Number(this.getAttribute('total')) : 5
   }
   get colour() {
-    return this.hasAttribute('colour') ? this.getAttribute('colour') : '#FFC107'
+    const val = this.hasAttribute('colour') ? this.getAttribute('colour')
+              : this.hasAttribute('color')  ? this.getAttribute('color')
+              : null
+    return this.isValidColor(val) ? val : '#FFC107'
   }
   get background() {
-    return this.hasAttribute('background') ? this.getAttribute('background') : '#CCCCCC'
+    const val = this.hasAttribute('background') ? this.getAttribute('background') : null
+    return this.isValidColor(val) ? val : '#CCCCCC'
   }
-  get title() {
-    let title = ''
+  get label() {
+    let label = ''
     if (this.hasReviews) {
-      title += `${this.reviews} review`
+      label += `${this.reviews} review`
       if (this.reviews > 1) {
-        title += `s`
+        label += `s`
       }
-      title += `. `
+      label += `. `
     }
-    title += `Rated ${this.displayRating} out of ${this.total} stars.`
-    return title
+    label += `Rated ${this.displayRating} out of ${this.total} stars.`
+    return label
   }
 }
 window.customElements.define('wc-star-review', StarReview)

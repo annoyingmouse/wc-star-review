@@ -1,4 +1,13 @@
+.claude
+.git
+.gitignore
+.idea
+.prettierrc
+CLAUDE.md
 index.html
 main.js
+node_modules
+package-lock.json
 rollup.config.js
-.prettierrc
+test/
+web-test-runner.config.mjs

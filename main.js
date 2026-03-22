@@ -12,19 +12,20 @@
     return color
   }
 
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
   setInterval(() => {
     const increments = document.getElementById('increments')
     const currentRating = Number(increments.getAttribute('rating'))
-    if(currentRating <= 5) {
+    if(currentRating < 4.9) {
       increments.setAttribute('rating', `${currentRating + 0.1}`)
       document.getElementById('rating').innerText = (currentRating + 0.1).toFixed(2)
     }else{
       increments.setAttribute('rating', '0')
-
       document.getElementById('rating').innerText = 0
     }
 
-  }, 250)
+  }, 1000)
 
   setInterval(() => {
 

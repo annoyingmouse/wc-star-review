@@ -51,11 +51,28 @@ The rating is provided using the `rating` attribute, it defaults to `0`.
 
 The number of stars visible is controlled by the `total` attribute, it defaults to `5` (see the **Caution** below).
 
-The number of reviews, if known, can be shown in brackets by providing a `reviews` attribute. You don't need to display this, but if you do the number will be shown in the title of the component.
+The number of reviews, if known, can be shown in brackets by providing a `reviews` attribute. The count is also included in the component's accessible label.
 
-The colour of the stars can be changed from the default of `#FFC107` by adding a `colour` attribute with a suitable CSS value.
+The colour of the stars can be changed from the default of `#FFC107` by adding a `colour` attribute (or `color` for the American spelling) with a suitable CSS color value. If the value is not a valid CSS color it is ignored and the default is used.
 
-The background behind the stars can be changed from the default of `#CCCCCC` by adding a `background` attribute with a suitable CSS value.
+The background behind the stars can be changed from the default of `#CCCCCC` by adding a `background` attribute with a suitable CSS color value. If the value is not a valid CSS color it is ignored and the default is used.
+
+## Accessibility
+
+The component automatically sets `role="img"`, `tabindex="0"`, and an `aria-label` on the host element. The label is generated from the current rating, total, and review count — for example: `"100 reviews. Rated 4.50 out of 5 stars."`.
+
+All three can be overridden by setting them directly on the element:
+
+```html
+<!-- suppress keyboard focus -->
+<wc-star-review rating="4" tabindex="-1"></wc-star-review>
+
+<!-- custom accessible name -->
+<wc-star-review rating="4" aria-label="Rated 4 out of 5 by 20 customers"></wc-star-review>
+
+<!-- decorative — remove from accessibility tree entirely -->
+<wc-star-review rating="4" role="presentation" tabindex="-1"></wc-star-review>
+```
 
 ## Caution
 
